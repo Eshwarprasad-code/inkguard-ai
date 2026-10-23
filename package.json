@@ -1,0 +1,13 @@
+{
+  "name": "inkguard-ai",
+  "version": "1.0.0",
+  "description": "InkGuard AI — Intelligent Multi-Modal Brand Governance & Verification Platform",
+  "private": true,
+  "scripts": {
+    "dev": "npm --prefix frontend run dev",
+    "build": "npm --prefix frontend run build",
+    "preview": "npm --prefix frontend run preview"
+  },
+  "author": "GUDIMETLA ESHWAR PRASAD (STRAW_HAT_CODER)",
+  "license": "MIT"
+}

@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>InkGuard AI — Round 1 Submission (STRAW_HAT_CODER)</title>
+<style>
+  @page {
+    size: A4;
+    margin: 15mm 15mm 15mm 15mm;
+    @bottom-right {
+      content: counter(page);
+    }
+  }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #1e293b;
+    background: #ffffff;
+    line-height: 1.50;
+    font-size: 10pt;
+  }
+
+  h1 {
+    font-size: 20pt;
+    font-weight: 800;
+    color: #0f172a;
+    border-bottom: 2.5px solid #2563eb;
+    padding-bottom: 6px;
+    margin-top: 0;
+    margin-bottom: 10px;
+    letter-spacing: -0.5px;
+  }
+
+  h2 {
+    font-size: 13pt;
+    font-weight: 700;
+    color: #1e3a8a;
+    background: #eff6ff;
+    border-left: 4px solid #2563eb;
+    padding: 5px 10px;
+    margin-top: 18px;
+    margin-bottom: 10px;
+    page-break-after: avoid;
+    break-after: avoid;
+    border-radius: 0 4px 4px 0;
+  }
+
+  h3 {
+    font-size: 11.5pt;
+    font-weight: 700;
+    color: #0f172a;
+    margin-top: 16px;
+    margin-bottom: 6px;
+    page-break-after: avoid;
+    break-after: avoid;
+  }
+
+  h4 {
+    font-size: 10.5pt;
+    font-weight: 600;
+    color: #334155;
+    margin-top: 12px;
+    margin-bottom: 4px;
+    page-break-after: avoid;
+    break-after: avoid;
+  }
+
+  p {
+    margin-top: 0;
+    margin-bottom: 8px;
+  }
+
+  hr {
+    border: none;
+    border-top: 1.5px solid #e2e8f0;
+    margin: 16px 0;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 12px 0 16px 0;
+    font-size: 9.2pt;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  th {
+    background-color: #1e293b;
+    color: #ffffff;
+    font-weight: 600;
+    text-align: left;
+    padding: 8px 10px;
+    border: 1px solid #0f172a;
+  }
+
+  td {
+    padding: 7px 10px;
+    border: 1px solid #cbd5e1;
+    vertical-align: top;
+  }
+
+  tr:nth-child(even) {
+    background-color: #f8fafc;
+  }
+
+  pre {
+    background: #0f172a;
+    color: #f8fafc;
+    padding: 10px 14px;
+    border-radius: 6px;
+    font-size: 8.5pt;
+    font-family: "Consolas", "Courier New", monospace;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    word-break: break-all;
+    margin: 10px 0;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  code {
+    font-family: "Consolas", "Courier New", monospace;
+    background: #f1f5f9;
+    color: #0f172a;
+    padding: 2px 5px;
+    border-radius: 4px;
+    font-size: 9pt;
+  }
+
+  pre code {
+    background: transparent;
+    color: inherit;
+    padding: 0;
+  }
+
+  blockquote {
+    border-left: 4px solid #3b82f6;
+    background: #f0fdf4;
+    border-color: #22c55e;
+    color: #14532d;
+    margin: 12px 0;
+    padding: 8px 14px;
+    border-radius: 0 4px 4px 0;
+    font-size: 9.8pt;
+  }
+
+  ul, ol {
+    margin-top: 4px;
+    margin-bottom: 10px;
+    padding-left: 20px;
+  }
+
+  li {
+    margin-bottom: 4px;
+  }
+
+  strong {
+    color: #0f172a;
+    font-weight: 600;
+  }
+
+  .badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 8pt;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  a {
+    color: #2563eb;
+    text-decoration: none;
+  }
+</style>
+</head>
+<body>
+<h1>Round 1 Submission: The Plan</h1>
+<h2>Project Name: InkGuard AI</h2>
+<h3>Intelligent Multi-Modal Brand Governance &amp; Pre-Publication Verification Platform</h3>
+<p><strong>Team Name:</strong> STRAW_HAT_CODER<br />
+<strong>Team Leader &amp; Sole Member:</strong> GUDIMETLA ESHWAR PRASAD<br />
+<strong>Challenge Sponsor:</strong> Inkloom AI<br />
+<strong>Event:</strong> Hackathon — Round 1: The Plan<br />
+<strong>Submission Document Type:</strong> Comprehensive Project Plan (All 11 Mandatory Requirements)</p>
+<hr />
+<h2>1. Understanding of the Problem Statement (25 Points)</h2>
+<h3>The Real-World Breakdown</h3>
+<p>Every growing company reaches a phase where content creation decentralizes. Instead of a single copywriter and art director sitting in the same room, content is produced simultaneously by product marketers, freelance copywriters, regional sales reps, social media interns, external agencies, and generative AI tools.</p>
+<p>While this unlocks rapid publishing velocity, it creates an acute operational crisis: <strong>brand fragmentation and silent credibility erosion.</strong></p>
+<h3>Who Experiences This Problem?</h3>
+<ol>
+<li><strong>Brand &amp; Creative Directors:</strong> Overwhelmed by review backlogs, forced into the role of punitive &quot;hallway police,&quot; spending dozens of hours catching repetitive mistakes instead of working on brand strategy.</li>
+<li><strong>Content Creators &amp; Agency Partners:</strong> Frustrated by unpredictable, subjective rejections (<em>&quot;this just doesn't feel like us&quot;</em>), slow approval turnaround times (averaging 3 to 5 days), and opaque brand handbooks that span 90+ static PDF pages.</li>
+<li><strong>Legal &amp; Compliance Officers:</strong> Terrified of unvetted generative AI output that introduces hallucinated performance metrics, unauthorized price discounts, omitted regulatory footnotes, or unverified superlatives (<em>&quot;the world's only 100% secure system&quot;</em>).</li>
+<li><strong>The Organization as a Whole:</strong> Inconsistent branding directly reduces customer trust. According to industry studies by Marq/Lucidpress, brand inconsistency causes up to a 33% hit to potential revenue growth and exposes firms to expensive public retractions.</li>
+</ol>
+<h3>Which Specific Part Our Team Intends to Solve</h3>
+<p>We are <strong>not</strong> building another AI text generator, nor are we building a passive cloud storage folder for logos.</p>
+<p>Our team is solving the critical <strong>pre-flight verification and collaborative approval bottleneck</strong>. We are building the bridge between <strong>static brand guidelines</strong> and <strong>live drafts before they hit &quot;Publish&quot;</strong>. InkGuard AI acts as an active, explainable verification runway that audits text, layout, colors, and factual claims against approved company guidelines, flags issues with exact line-and-pixel citations, offers intent-preserving fixes, and enables smooth human sign-offs.</p>
+<hr />
+<h2>2. The Users Affected by the Problem</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">User Persona</th>
+<th style="text-align:left">Role &amp; Organizational Setting</th>
+<th style="text-align:left">Daily Frustrations &amp; Needs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>Sarah (The Content Creator / Copywriter)</strong></td>
+<td style="text-align:left">In-house marketer or agency freelancer writing 10+ social posts, blogs, and ad variations weekly.</td>
+<td style="text-align:left">Needs immediate, non-punitive feedback while drafting; hates vague rejections; wants concrete, on-brand phrasing suggestions that preserve her original creative hook.</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Marcus (The Brand &amp; Creative Director)</strong></td>
+<td style="text-align:left">Senior custodian managing brand identity across 4 business units and external advertising agencies.</td>
+<td style="text-align:left">Drowning in repetitive manual reviews (checking hex codes, logo clear-space, forbidden words); needs a single source of truth and aggregate data showing which rules people misunderstand.</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Elena (The Compliance &amp; Legal Reviewer)</strong></td>
+<td style="text-align:left">In-house counsel or product manager vetting customer-facing decks, contracts, and press releases.</td>
+<td style="text-align:left">Stressed about AI hallucinations, ungrounded statistical claims, and missing liability disclaimers; requires deterministic fact verification and an immutable audit trail.</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>David (VP of Marketing / CMO)</strong></td>
+<td style="text-align:left">Department leader tracking team velocity, campaign ROI, and public reputation.</td>
+<td style="text-align:left">Wants content velocity without risking brand reputation; needs macro analytics on department-wide brand compliance scores.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>3. Our Proposed Solution</h2>
+<p><strong>InkGuard AI</strong> is an intelligent, explainable brand-governance system designed to verify multi-format content before it goes live. Rather than acting as a binary &quot;pass/fail&quot; gatekeeper, InkGuard AI functions as a <strong>supportive, highly context-aware co-pilot</strong>.</p>
+<h3>Core Philosophy: &quot;Explain, Ground, and Assist — Never Override&quot;</h3>
+<ol>
+<li><strong>Dynamic Brand Knowledge Ingestion:</strong> Companies upload their brand style guides, tone definitions, terminology glossaries, and an &quot;Approved Fact Repository&quot; (verified metrics, feature lists, pricing guidelines).</li>
+<li><strong>Multi-Modal Pre-Flight Inspection:</strong> Creators upload their drafts—text, blog copy, marketing banners, or slide decks. InkGuard AI runs concurrent audits across five distinct dimensions:
+<ul>
+<li><em>Tone &amp; Voice Alignment</em> (detects overly casual, aggressive, or corporate buzzword-heavy phrasing).</li>
+<li><em>Terminology &amp; Lexicon</em> (flags deprecated naming, competitor trademarks, unapproved jargon).</li>
+<li><em>Factual Claim Grounding</em> (cross-references promotional claims against verified corporate fact tables).</li>
+<li><em>Visual &amp; Logo Identity</em> (checks palette compliance, logo clear-space, aspect ratio distortion).</li>
+<li><em>Accessibility &amp; Inclusivity</em> (evaluates WCAG 2.1 color contrast ratios and inclusive phrasing).</li>
+</ul>
+</li>
+<li><strong>Transparent Guideline Citations:</strong> Every single flag explicitly states <em>why</em> it was flagged, links to the exact section and page of the brand book, and assigns a clear severity level (<em>Advisory, Warning, Critical Blocker</em>).</li>
+<li><strong>Intent-Preserving Rewrites:</strong> Instead of stripping the author's voice, our semantic engine generates 3 calibrated rewrite alternatives (<em>Conservative, Balanced, Creative</em>) that preserve the creator's emotional intent while adhering strictly to guidelines.</li>
+<li><strong>Collaborative Human-in-the-Loop Workflow:</strong> Creators can accept suggestions with a single click, edit inline, or submit reasoned exemption requests for brand managers and legal reviewers to review on a shared canvas.</li>
+</ol>
+<hr />
+<h2>4. The Complete Product Workflow</h2>
+<p>The diagram below details how a creator and reviewer interact with InkGuard AI from draft ingestion to final verified publication:</p>
+<pre><code>[ STEP 1: KNOWLEDGE INGESTION ]
+Brand Team uploads:
+- Brand Guideline PDF
+- Approved Fact Base (CSV/JSON)
+- Visual Style Tokens (Hex, Logos)
+          │
+          ▼
+[ STEP 2: CONTENT SUBMISSION ]
+Creator submits draft:
+- Marketing Copy / Text
+- Campaign Banners (PNG/JPG)
+          │
+          ▼
+[ STEP 3: PRE-FLIGHT INSPECTION ENGINE ]
+Concurrent Analysis:
+├── Deterministic Regex / Banned Glossary Check
+├── Semantic RAG against Brand Rules
+├── Factual Claim Cross-Referencing
+└── Multimodal Vision &amp; WCAG Contrast Analysis
+          │
+          ▼
+[ STEP 4: INTERACTIVE REVIEW CANVAS ]
+Creator sees interactive feedback:
+├── Highlighted text and visual bounding boxes
+├── Exact Guideline Citations (Rule #, Clause, Page)
+└── 3 Intent-Preserving Rewrite Options
+          │
+          ▼
+[ STEP 5: CREATOR ACTION ]
+Creator chooses:
+├── Accept Rewrite with 1-Click
+├── Edit Inline
+└── Request Exemption with human justification
+          │
+          ▼
+[ STEP 6: COLLABORATIVE SIGN-OFF ]
+Reviewer / Legal Dashboard:
+├── Review flagged exemptions &amp; critical claims
+├── Threaded inline comments
+└── Authorize final publication
+          │
+          ▼
+[ STEP 7: CERTIFICATE &amp; GOVERNANCE RADAR ]
+├── Cryptographically stamped Compliance Certificate
+└── Analytics: Proactive alerts on ambiguous guidelines
+</code></pre>
+<h3>Realistic User Journey: Walkthrough</h3>
+<ol>
+<li><strong>The Creator:</strong> Alex, a copywriter, drafts a LinkedIn product launch post and a promo banner. He pastes the copy and drops the image into InkGuard AI.</li>
+<li><strong>The Scan:</strong> In under 4 seconds, the system highlights the sentence: <em>&quot;Our platform guarantees 100% instant recovery with zero downtime.&quot;</em></li>
+<li><strong>The Explanation:</strong> The side panel flags a <strong>Critical Fact &amp; Claim Warning</strong>:
+<blockquote>
+<p><em>Violation: Guideline §4.1 (Promotional Claims). Source: Verified Fact Sheet 2026. SLA is 99.95%, not 100%. Absolute claims require legal disclaimers.</em></p>
+</blockquote>
+</li>
+<li><strong>The Suggestion:</strong> Alex clicks &quot;View Alternatives&quot; and sees:
+<ul>
+<li><em>Balanced:</em> <em>&quot;Engineered for 99.95% high-availability recovery when seconds matter most.&quot;</em><br />
+He clicks <strong>&quot;Apply&quot;</strong>, and the copy updates instantly.</li>
+</ul>
+</li>
+<li><strong>Visual Audit:</strong> The banner check detects that white text placed over a yellow background yields a contrast ratio of <strong>2.8:1</strong> (failing WCAG AA standard of 4.5:1). It recommends darkening the overlay or switching text to Navy (<code>#0A192F</code>). Alex updates the asset.</li>
+<li><strong>Sign-Off:</strong> With no critical blockers remaining, Alex hits <strong>&quot;Submit for Final Sign-Off&quot;</strong>. Marcus (Brand Manager) receives a notification, sees the resolved diffs, clicks <strong>&quot;Approve&quot;</strong>, and an audit trail log is archived.</li>
+</ol>
+<hr />
+<h2>5. The Main Features We Intend to Build</h2>
+<h3>Core Platform Features (Round 2 Build)</h3>
+<ol>
+<li><strong>Dynamic Brand Knowledge Hub:</strong> Ingestion pipeline supporting PDF brand guides, CSV/JSON corporate fact sheets, and design token configurations.</li>
+<li><strong>Pre-Flight Multi-Format Scanner:</strong> Unified scanning engine for plain text, markdown, social copy, and visual graphic files (PNG, JPG, WebP).</li>
+<li><strong>Explainable Citation Engine:</strong> Deep-linking every flagged issue to the specific rule ID, paragraph, and page number of the source document.</li>
+<li><strong>Interactive Studio Review Canvas:</strong> Side-by-side split screen showing original content, highlighted problem zones, inline diffs, and 1-click suggestion replacements.</li>
+<li><strong>Multi-Role Collaborative Review:</strong> Creator, Brand Reviewer, and Legal sign-off workflows with threaded inline discussions and exemption tracking.</li>
+</ol>
+<h3>The Three Named Improvements (Directly Addressing Hackathon Judging Criteria)</h3>
+<p>To ensure seamless execution across Round 2 and Round 3, we have explicitly structured our build around three standout technical improvements:</p>
+<ul>
+<li><strong>Named Improvement 1: Multimodal Visual Identity &amp; WCAG Contrast Inspector</strong><br />
+Combines computer vision with mathematical color science. Extracts dominant image color palettes, computes true WCAG 2.1 contrast ratios on rendered text overlays, and checks logo clear-space bounding boxes to prevent visual branding dilution.</li>
+<li><strong>Named Improvement 2: Factual Grounding &amp; Unsupported Claim Verification Engine</strong><br />
+Extracts factual assertions, statistics, and superlatives from copy and cross-references them against a structured Company Fact Repository using semantic RAG. Generates confidence scores and prevents AI-hallucinated promotional claims.</li>
+<li><strong>Named Improvement 3: Guideline Ambiguity Radar &amp; Governance Analytics</strong><br />
+A reverse-governance intelligence dashboard that tracks creator disputes, review overrides, and deliberation times. Proactively alerts brand managers when brand guidelines are contradictory, vague, or outdated, closing the feedback loop.</li>
+</ul>
+<hr />
+<h2>6. Technology Stack &amp; Technical Deep-Dive (20 Points)</h2>
+<h3>6.1 Planned Technology Stack</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Layer</th>
+<th style="text-align:left">Technology</th>
+<th style="text-align:left">Pragmatic Engineering Rationale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>Frontend UI</strong></td>
+<td style="text-align:left"><strong>Next.js 14 (App Router) + React + Vanilla CSS</strong></td>
+<td style="text-align:left">Fast server rendering, snappy client-side state for rich interactive diff canvases, high responsiveness, and zero bloated CSS dependencies.</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Backend API</strong></td>
+<td style="text-align:left"><strong>Python 3.11 + FastAPI + Pydantic v2</strong></td>
+<td style="text-align:left">High-concurrency async performance, native interoperability with machine learning packages, automated OpenAPI documentation, and strict data validation.</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>AI Orchestration &amp; RAG</strong></td>
+<td style="text-align:left"><strong>LangChain &amp; LlamaIndex</strong></td>
+<td style="text-align:left">Battle-tested orchestration for hybrid search: combines dense vector similarity with sparse BM25 keyword matching for exact terminology rules.</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Vector Database</strong></td>
+<td style="text-align:left"><strong>ChromaDB (Local / Embedded)</strong></td>
+<td style="text-align:left">Ultra-fast, zero-overhead embedded vector database allowing instant local and cloud deployment without heavy database infrastructure dependencies.</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Multimodal &amp; Vision AI</strong></td>
+<td style="text-align:left"><strong>Gemini 1.5 Pro / Flash &amp; Pillow/OpenCV</strong></td>
+<td style="text-align:left">1M+ token context window enables loading entire brand guidelines simultaneously; computer vision libraries handle mathematical color extraction and pixel contrast.</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Document Parsing</strong></td>
+<td style="text-align:left"><strong>PyMuPDF &amp; Python-docx</strong></td>
+<td style="text-align:left">Fast, reliable parsing of formatted corporate PDFs, brand books, and text documents into structured semantic sections.</td>
+</tr>
+</tbody>
+</table>
+<h3>6.2 The Most Technically Challenging Part &amp; Architectural Solution</h3>
+<h4>The Challenge: Eliminating False Positives in Claim Verification &amp; Preserving Author Intent</h4>
+<p>The hardest technical challenge in brand governance is <strong>distinguishing harmless promotional flair from dangerous, unverified factual claims</strong>, while simultaneously suggesting rewrites that <strong>do not ruin the creator's original tone</strong>.</p>
+<p>Standard LLM prompts either act as hyper-conservative censors (flagging everyday metaphors) or hallucinate whether a company fact is true.</p>
+<h4>Our Planned Architectural Solution</h4>
+<p>We address this through a <strong>Three-Stage Verification Pipeline</strong>:</p>
+<pre><code class="language-mermaid">graph TD
+    A[Raw Input Text] --&gt; B[Stage 1: Claim Extraction &amp; AST Parsing]
+    B --&gt;|Isolates Factual Claims &amp; Superlatives| C[Stage 2: Hybrid RAG Fact-Verification Matrix]
+    C --&gt;|Vector Similarity + BM25 Filter| D[(Approved Fact Repository)]
+    D --&gt;|Truth Score &amp; Source Snippet| E[Stage 3: Dual-Prompt Intent-Preserving Rewriter]
+    E --&gt; F1[Option A: Conservative Rewrite]
+    E --&gt; F2[Option B: Balanced Rewrite]
+    E --&gt; F3[Option C: Creative Rewrite]
+</code></pre>
+<ol>
+<li><strong>Stage 1 (AST Claim Extraction):</strong> A lightweight prompt extracts specific factual assertions (e.g., percentages, uptime numbers, certifications, pricing claims) and isolates rhetorical style from factual predicates.</li>
+<li><strong>Stage 2 (Grounded Fact Verification):</strong> Rather than asking the LLM if a claim is true, the system performs a hybrid semantic search against the pre-indexed <em>Approved Fact Repository</em>. If the similarity score falls below a calibrated threshold or contradicts approved numbers, it triggers a grounded flag citing the discrepancy.</li>
+<li><strong>Stage 3 (Dual-Prompt Intent-Preserving Reconstruction):</strong> The rewriter receives the creator's original sentence, the exact brand rule breached, the approved factual fact, and the extracted rhetorical intent. It then generates 3 distinct alternatives that fix the factual defect while preserving the rhythm, emotion, and purpose of the author's copy.</li>
+</ol>
+<hr />
+<h2>7. Responsibilities of Each Team Member</h2>
+<p><strong>Team Structure:</strong> Solo Builder Execution<br />
+<strong>Team Leader &amp; Sole Member:</strong> <strong>GUDIMETLA ESHWAR PRASAD</strong></p>
+<p>As an agile solo developer representing team <strong>STRAW_HAT_CODER</strong>, the project has been structured into four clear, modular development domains to ensure full ownership and rapid, unified execution without cross-team communication overhead:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Development Domain</th>
+<th style="text-align:left">Primary Focus &amp; Deliverables</th>
+<th style="text-align:left">Execution Strategy</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>Domain 1: Full-Stack Architecture &amp; UI</strong></td>
+<td style="text-align:left">Next.js 14 Studio UI, interactive side-by-side diff canvas, inline suggestion replacement, and role-based review states.</td>
+<td style="text-align:left">Leveraging clean component architecture with Next.js App Router and Vanilla CSS for fast, responsive rendering.</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Domain 2: AI &amp; RAG Backend Engineering</strong></td>
+<td style="text-align:left">FastAPI REST endpoints, ChromaDB vector indexing, hybrid search (BM25 + Dense Embeddings), and intent-preserving rewrite prompts.</td>
+<td style="text-align:left">Building decoupled, asynchronous Python services with strict Pydantic v2 schemas and deterministic fallback checks.</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Domain 3: Computer Vision &amp; Multimodal Logic</strong></td>
+<td style="text-align:left">Automated dominant color extraction, mathematical WCAG 2.1 contrast ratio calculations, and logo bounding-box clear-space validation.</td>
+<td style="text-align:left">Utilizing Python Pillow &amp; OpenCV for deterministic mathematical checks combined with multimodal LLM vision APIs.</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Domain 4: Product Governance, QA &amp; Benchmarking</strong></td>
+<td style="text-align:left">Synthetic test corpus (off-brand vs. on-brand test cases), hallucination benchmark suite, compliance audit trail design, and documentation.</td>
+<td style="text-align:left">Continuous self-testing against real-world sample marketing assets, decks, and social banners to validate reliability.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>8. Development Plan Across All Three Rounds</h2>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────────┐
+│                    DEVELOPMENT ROADMAP ACROSS ALL ROUNDS                    │
+├─────────────────────────────────────────────────────────────────────────────┤
+│ ROUND 1: THE PLAN (Current Phase)                                           │
+│ ✔ Deep problem discovery &amp; empirical research synthesis.                    │
+│ ✔ Architectural design, multi-modal pipeline specification, and rubric map. │
+│ ✔ Formulation of the Three Named Improvements.                              │
+├─────────────────────────────────────────────────────────────────────────────┤
+│ ROUND 2: THE BUILD (MVP &amp; Core Workflow)                                    │
+│ ▶ Build the FastAPI backend and ChromaDB ingestion pipeline.                │
+│ ▶ Implement Next.js 14 Studio UI with interactive review canvas.            │
+│ ▶ Deliver the Three Named Improvements:                                     │
+│   1. Multimodal Visual Identity &amp; WCAG Contrast Inspector.                  │
+│   2. Fact-Checking &amp; Unsupported Claim Verification Engine.                 │
+│   3. Interactive Collaborative Review Canvas with 1-click diffs.            │
+│ ▶ Demonstrate an end-to-end working run (Scan → Flag → Rewrite → Approve).  │
+├─────────────────────────────────────────────────────────────────────────────┤
+│ ROUND 3: THE FINISH (Polish, Reliability &amp; Real-World Fit)                  │
+│ ▶ Build the Guideline Ambiguity Radar (governance analytics).               │
+│ ▶ Add immutable audit trail exports &amp; role-based sign-off workflows.        │
+│ ▶ Conduct stress testing against edge-case marketing decks and assets.      │
+│ ▶ Final video demo, product walkthrough, and open-source documentation.     │
+└─────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<hr />
+<h2>9. Expected Impact of Our Solution</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Impact Category</th>
+<th style="text-align:left">Before InkGuard AI (Status Quo)</th>
+<th style="text-align:left">With InkGuard AI (Expected Outcome)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>Review Turnaround Time</strong></td>
+<td style="text-align:left">3 to 5 business days per campaign asset.</td>
+<td style="text-align:left"><strong>Under 15 minutes</strong> for self-service creator validation; <strong>&lt; 4 hours</strong> for final human sign-off.</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Review Bottlenecks</strong></td>
+<td style="text-align:left">Brand managers spend 60% of their week checking basic rules.</td>
+<td style="text-align:left"><strong>75% reduction</strong> in manual repetitive reviews, freeing brand teams for strategic creative work.</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Off-Brand &amp; Erroneous Claims</strong></td>
+<td style="text-align:left">Up to 68% of marketing assets leak off-brand copy or ungrounded claims.</td>
+<td style="text-align:left"><strong>Over 90% reduction</strong> in published non-compliant claims, bad color contrast, and logo misplacements.</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Agency &amp; Freelancer Onboarding</strong></td>
+<td style="text-align:left">2 to 3 weeks spent reading outdated PDFs and getting revised repeatedly.</td>
+<td style="text-align:left"><strong>Zero-day onboarding</strong>: external agencies receive real-time guardrails directly inside their workflow.</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Guideline Clarity</strong></td>
+<td style="text-align:left">Brand books stay outdated for years with ambiguous rules.</td>
+<td style="text-align:left">Proactive detection of contradictory or confusing brand guidelines based on creator dispute trends.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>10. Future Scope of the Product After the Hackathon</h2>
+<p>Following the competition, our roadmap focuses on integrating InkGuard AI directly into modern creative workflows:</p>
+<ol>
+<li><strong>Native Creative Integrations (In-Situ Linters):</strong>
+<ul>
+<li><strong>Figma &amp; Canva Plugins:</strong> Real-time visual linting directly on design canvases as designers lay out social graphics.</li>
+<li><strong>Google Docs, Word &amp; Notion Add-Ons:</strong> Live brand co-pilot highlighting prohibited terminology and claim inaccuracies while writers type.</li>
+<li><strong>Slack &amp; Microsoft Teams Bots:</strong> Quick <code>/inkguard check</code> command allowing sales and social teams to verify one-off copy in seconds.</li>
+</ul>
+</li>
+<li><strong>Multi-Brand &amp; Regional Sub-Guideline Hierarchy:</strong> Enterprise support for multi-brand conglomerates (e.g., parent company master brand rules inherited by subsidiary brand kits with localized cultural nuances).</li>
+<li><strong>Automated Guideline Evolution Engine:</strong> Utilizing clustered override data to automatically propose updated, clearer guideline clauses to brand directors with a single &quot;Merge Update&quot; button.</li>
+<li><strong>Enterprise CMS &amp; Social Publishing Webhooks:</strong> Direct integrations with Webflow, WordPress, Hubspot, and Hootsuite to prevent scheduled publishing if an asset has unresolved Critical Blocker flags.</li>
+</ol>
+<hr />
+<h2>11. Complete Team and Participant Details</h2>
+<blockquote>
+<p><strong>Important Team &amp; Certificate Notice:</strong><br />
+All details below are entered accurately for official event records and certificate generation.</p>
+</blockquote>
+<h3>Team Information</h3>
+<ul>
+<li><strong>Registered Team Name:</strong> <strong>STRAW_HAT_CODER</strong></li>
+<li><strong>Project Name:</strong> <strong>InkGuard AI</strong></li>
+<li><strong>Project Repository:</strong> <code>https://github.com/Eshwarprasad-code/inkguard-ai</code> <em>(to be initialized for Round 2)</em></li>
+<li><strong>Project Track:</strong> Intelligent Brand Governance &amp; Pre-Publication Verification</li>
+<li><strong>Challenge Title:</strong> Problem Statement by Inkloom AI</li>
+</ul>
+<h3>Participant Details</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Member #</th>
+<th style="text-align:left">Full Name (For Certificate)</th>
+<th style="text-align:left">University / Organization</th>
+<th style="text-align:left">Role in Project</th>
+<th style="text-align:left">Email Address</th>
+<th style="text-align:left">GitHub Profile</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><strong>1</strong></td>
+<td style="text-align:left"><strong>GUDIMETLA ESHWAR PRASAD</strong></td>
+<td style="text-align:left">Institute of Aeronautical Engineering</td>
+<td style="text-align:left">Team Leader &amp; Solo Full-Stack AI Engineer</td>
+<td style="text-align:left"><code>gudimetlaeshwarprasad@gmail.com</code></td>
+<td style="text-align:left"><a href="https://github.com/Eshwarprasad-code">github.com/Eshwarprasad-code</a></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>Conclusion</h2>
+<p><strong>InkGuard AI</strong> provides an authentic, high-impact, and technically sound solution to the brand-governance challenge presented by <strong>Inkloom AI</strong>. By combining rigorous deterministic checks with intelligent multimodal grounding, transparent rule-to-source explanations, and a collaborative review canvas, our team is positioned to achieve full marks in <strong>Round 1: The Plan</strong> and seamlessly build a standout prototype in <strong>Round 2</strong>.</p>
+
+</body>
+</html>
