@@ -38,9 +38,39 @@ export function rgbToHex(r, g, b) {
 }
 
 /**
- * Core Multi-Modal Inspection Engine
+ * Core Multi-Modal Inspection Engine (Hybrid: FastAPI Backend with Client-Side Fallback)
  */
 export async function runPreflightScan({ text, imageMeta, brandGuidelines }) {
+  const BACKEND_URL = (typeof import.meta !== 'undefined' && import.meta.env && import.meta.env.VITE_API_URL) || 'http://localhost:8000';
+
+  // 1. ATTEMPT REAL FASTAPI BACKEND CALL
+  try {
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 1500);
+
+    const resp = await fetch(`${BACKEND_URL}/api/v1/inspect`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        text: text || '',
+        brandId: brandGuidelines?.id || 'inkloom',
+        imageMeta: imageMeta || undefined
+      }),
+      signal: controller.signal
+    });
+
+    clearTimeout(timeoutId);
+
+    if (resp.ok) {
+      const backendData = await resp.json();
+      backendData.engine = 'FastAPI Backend (Python 3.11 Microservice)';
+      return backendData;
+    }
+  } catch (err) {
+    // Backend offline / deployed statically: Seamlessly proceed with client-side engine
+    // console.log('FastAPI server offline, running in autonomous client-side engine mode');
+  }
+
   const findings = [];
   const textContent = text || '';
 
@@ -268,6 +298,7 @@ export async function runPreflightScan({ text, imageMeta, brandGuidelines }) {
 
   return {
     timestamp: new Date().toISOString(),
+    engine: 'Client-Side Autonomous Engine (Zero-Latency Fallback)',
     score: finalScore,
     status,
     findingsCount: findings.length,
